@@ -17,6 +17,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.modifierdemo.ui.theme.ModifierDemoTheme
 import androidx.compose.foundation.border
 import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
 
 
 class MainActivity : ComponentActivity() {
@@ -44,6 +46,14 @@ fun DemoScreen (modifier: Modifier = Modifier){
         mymodifier,
         fontSize = 40.sp,
         fontWeight = FontWeight.Bold
+    )
+}
+
+@Composable
+fun CustomImage(image: Int) {
+    Image(
+        painter = painterResource(image),
+        contentDescription = null
     )
 }
 
