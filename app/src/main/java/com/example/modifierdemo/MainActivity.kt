@@ -19,6 +19,8 @@ import androidx.compose.foundation.border
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.Image
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.Alignment
+import androidx.compose.foundation.layout.*
 
 
 class MainActivity : ComponentActivity() {
@@ -39,14 +41,23 @@ class MainActivity : ComponentActivity() {
 fun DemoScreen (modifier: Modifier = Modifier){
 
     val mymodifier = modifier
-        .padding(all = 10.dp)
         .border(width = 2.dp, color = Color.Black)
-    Text(
-        "Hello Compose",
-        mymodifier,
-        fontSize = 40.sp,
-        fontWeight = FontWeight.Bold
-    )
+        .padding(all = 10.dp)
+
+    Column(
+        Modifier.padding(20.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Text(
+            "Hello Compose",
+            mymodifier,
+            fontSize = 40.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Spacer(Modifier.height(16.dp))
+        CustomImage(R.drawable.vacation)
+    }
 }
 
 @Composable
